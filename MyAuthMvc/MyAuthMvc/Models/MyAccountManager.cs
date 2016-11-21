@@ -8,10 +8,10 @@ namespace MyAuthMvc.Models
 {
     public class MyAccountManager
     {
-        private List<MyAccount> _accounts = new List<MyAccount>();
+        private readonly List<MyAccount> _accounts = new List<MyAccount>();
         public MyAccountManager()
         {
-            _accounts.Add(new MyAccount() {Username = "acc1", Password = "123",Roles = new []{"root"}});
+            _accounts.Add(new MyAccount() { Username = "acc1", Password = "123", Roles = new[] { "root" } });
             _accounts.Add(new MyAccount() { Username = "acc2", Password = "123", Roles = new[] { "admin" } });
             _accounts.Add(new MyAccount() { Username = "acc3", Password = "123", Roles = new[] { "user" } });
         }
@@ -19,6 +19,13 @@ namespace MyAuthMvc.Models
         public MyAccount Find(string username, string password)
         {
             return _accounts.FirstOrDefault(p => p.Username == username && p.Password == password);
+        }
+
+        public string[] GetRoles(string username)
+        {
+            var acc = _accounts.FirstOrDefault(p => p.Username == username);
+
+            return acc?.Roles;
         }
     }
 }

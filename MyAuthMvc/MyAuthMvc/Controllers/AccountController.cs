@@ -25,9 +25,7 @@ namespace MyAuthMvc.Controllers
         {
             var am = new MyAccountManager();
 
-            if (!ModelState.IsValid || string.IsNullOrEmpty(avm.Username)
-                || string.IsNullOrEmpty(avm.Password)
-                || am.Find(avm.Username, avm.Password) == null)
+            if (!ModelState.IsValid || !Membership.ValidateUser(avm.Username, avm.Password))
             {
                 ViewBag.Error = "Account credentials are invalid";
                 return View("Login");
