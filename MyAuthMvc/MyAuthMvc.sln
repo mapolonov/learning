@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyAuthMvc", "MyAuthMvc\MyAuthMvc.csproj", "{1BCE5773-C871-492B-8269-014C6E059F73}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyAuthMvc.Tests", "MyAuthMvc.Tests\MyAuthMvc.Tests.csproj", "{DAF5BFED-20DC-4641-AE3F-EA8051FA78D2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1BCE5773-C871-492B-8269-014C6E059F73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BCE5773-C871-492B-8269-014C6E059F73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BCE5773-C871-492B-8269-014C6E059F73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BCE5773-C871-492B-8269-014C6E059F73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DAF5BFED-20DC-4641-AE3F-EA8051FA78D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAF5BFED-20DC-4641-AE3F-EA8051FA78D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAF5BFED-20DC-4641-AE3F-EA8051FA78D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAF5BFED-20DC-4641-AE3F-EA8051FA78D2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

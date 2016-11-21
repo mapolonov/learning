@@ -1,0 +1,8 @@
+﻿@model dynamic
+
+@{
+    ViewBag.Title = "Profile";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Hello profile - @HttpContext.Current.User.Identity.Name</h2>
