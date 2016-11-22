@@ -28,7 +28,7 @@ namespace MyAuthMvc.Security
                 return (string[])HttpRuntime.Cache[cacheKey];
             }
 
-            var am = new MyAccountManager();
+            var am = new MyUserManager();
             var roles = am.GetRoles(username);
             if (roles != null)
             {

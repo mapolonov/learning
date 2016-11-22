@@ -6,7 +6,7 @@ using System.Web;
 
 namespace MyAuthMvc.Models
 {
-    public class MyAccount
+    public class MyUser
     {
         //[Required(ErrorMessage = "Please enter user name")]
         //[Display(Name = "User Name", Description = "Enter user name")]
@@ -15,10 +15,10 @@ namespace MyAuthMvc.Models
         //[Required(ErrorMessage = "Please enter password")]
         //[Display(Name = "Password", Description = "Enter password")]
         public string Password { get; set; }
-        
+
         //[Display(Name = "Remember me?", Description = "Remember me?")]
         //public bool RememberMe { get; set; }
-
+        public string Email { get; set; }
         public string[] Roles { get; set; }
     }
 }

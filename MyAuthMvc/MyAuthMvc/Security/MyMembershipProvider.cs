@@ -43,7 +43,7 @@ namespace MyAuthMvc.Security
 
         public override bool ValidateUser(string username, string password)
         {
-            var am = new MyAccountManager();
+            var am = new MyUserManager();
             return am.Find(username, password) != null;
         }
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Script.Serialization;
 using System.Web.Security;
 using MyAuthMvc.Models;
 using MyAuthMvc.ModelViews;
@@ -23,7 +24,7 @@ namespace MyAuthMvc.Controllers
         [AllowAnonymous]
         public ActionResult Login(LoginViewModel avm, string returnUrl = "")
         {
-            var am = new MyAccountManager();
+            var am = new MyUserManager();
 
             if (!ModelState.IsValid || !Membership.ValidateUser(avm.Username, avm.Password))
             {
@@ -31,7 +32,15 @@ namespace MyAuthMvc.Controllers
                 return View("Login");
             }
 
-            FormsAuthentication.SetAuthCookie(avm.Username, avm.RememberMe);
+            var user = am.Find(avm.Username, avm.Password);
+            var js = new JavaScriptSerializer();
+            var data = js.Serialize(user);
+            var ticket = new FormsAuthenticationTicket(1, avm.Username, DateTime.Now, DateTime.Now.AddMinutes(30), avm.RememberMe, data);
+            var encToken = FormsAuthentication.Encrypt(ticket);
+            var cockie = new HttpCookie(FormsAuthentication.FormsCookieName, encToken);
+            Response.Cookies.Add(cockie);
+
+            //FormsAuthentication.SetAuthCookie(avm.Username, avm.RememberMe);
             if (Url.IsLocalUrl(returnUrl))
             {
                 return Redirect(returnUrl);

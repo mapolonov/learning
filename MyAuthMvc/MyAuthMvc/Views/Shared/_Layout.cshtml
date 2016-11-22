@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using MyAuthMvc.Security
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -32,7 +33,7 @@
                             {
                                 using (Html.BeginForm("Logout","Account",FormMethod.Post, new {id = "logoutForm"}))
                                 {
-                                   // Html.ActionLink("Logout", "Logout", "Account");
+                                    // Html.ActionLink("Logout", "Logout", "Account");
                                     <a href="javascript:document.getElementById('logoutForm').submit()">Logout</a>
                                 }
                             }
@@ -43,6 +44,16 @@
 
                         }
                         
+                    </li>
+                    <li  style="color: white">
+                        @{
+                            if (Request.IsAuthenticated)
+                            {
+                                var identity = (HttpContext.Current.User as MyPrincipal).Identity as MyIdentity;
+                                <text>@string.Format("Hello {0}", identity.MyUser.Email)</text>
+
+                            }
+                        }
                     </li>
                 </ul>
             </div>
