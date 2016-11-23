@@ -13,6 +13,7 @@ namespace MyAuthMvc.Controllers
     public class AccountController : Controller
     {
         // GET: Account
+        [RequireHttps]
         [AllowAnonymous]
         public ActionResult Login()
         {
@@ -20,6 +21,7 @@ namespace MyAuthMvc.Controllers
         }
 
         [HttpPost]
+        [RequireHttps]
         [ValidateAntiForgeryToken]
         [AllowAnonymous]
         public ActionResult Login(LoginViewModel avm, string returnUrl = "")
@@ -57,6 +59,7 @@ namespace MyAuthMvc.Controllers
 
         [Authorize]
         [HttpPost]
+        [RequireHttps]
         public ActionResult Logout()
         {
            FormsAuthentication.SignOut();
