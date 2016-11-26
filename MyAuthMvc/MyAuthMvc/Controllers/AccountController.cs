@@ -41,6 +41,7 @@ namespace MyAuthMvc.Controllers
             var encToken = FormsAuthentication.Encrypt(ticket);
             var cockie = new HttpCookie(FormsAuthentication.FormsCookieName, encToken);
             Response.Cookies.Add(cockie);
+            
 
             //FormsAuthentication.SetAuthCookie(avm.Username, avm.RememberMe);
             if (Url.IsLocalUrl(returnUrl))
