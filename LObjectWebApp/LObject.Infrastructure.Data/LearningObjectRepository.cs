@@ -18,6 +18,11 @@ namespace LObject.Infrastructure.Data
             this.db = new LObjectDbContext();
         }
 
+        public LearningObjectRepository(LObjectDbContext dbcontext)
+        {
+            this.db = dbcontext;
+        }
+
         public virtual void Dispose(bool disposing)
         {
             if (!this.disposed)
@@ -36,12 +41,12 @@ namespace LObject.Infrastructure.Data
             GC.SuppressFinalize(this);
         }
 
-        public IEnumerable<LearningObject> GetLearningObjectList()
+        public IEnumerable<LearningObject> GetAll()
         {
             throw new NotImplementedException();
         }
 
-        public LearningObject GetLearningObject(int id)
+        public LearningObject Get(int id)
         {
             throw new NotImplementedException();
         }
@@ -65,5 +70,6 @@ namespace LObject.Infrastructure.Data
         {
             throw new NotImplementedException();
         }
+
     }
 }

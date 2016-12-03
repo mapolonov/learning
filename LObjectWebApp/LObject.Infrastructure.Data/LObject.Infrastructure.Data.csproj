@@ -52,6 +52,7 @@
     <Compile Include="LearningObjectRepository.cs" />
     <Compile Include="LObjectDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LObject.Domain.Core\LObject.Domain.Core.csproj">

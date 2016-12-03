@@ -19,3 +19,14 @@
 /LObjectWebApp/LObjectWebApp/obj/Debug
 /LObjectWebApp/LObject.Infrastructure.Data/*.user
 /LObjectWebApp/LObjectWebApp/*.user
+/LObject3TierWebApp/LObject3Tier.BLL/bin/Debug
+/LObject3TierWebApp/LObject3Tier.BLL/obj/Debug
+/LObject3TierWebApp/LObject3Tier.DAL/bin/Debug
+/LObject3TierWebApp/LObject3Tier.DAL/obj/Debug
+/LObject3TierWebApp/LObject3TierWebApp.Tests/bin/Debug
+/LObject3TierWebApp/LObject3TierWebApp.Tests/obj/Debug
+/LObject3TierWebApp/LObject3TierWebApp/*.user
+/LObject3TierWebApp/LObject3TierWebApp/bin
+/LObject3TierWebApp/LObject3TierWebApp/obj/Debug
+/LObjectWebApp/NDependOut
+/LObjectWebApp/*.ndproj

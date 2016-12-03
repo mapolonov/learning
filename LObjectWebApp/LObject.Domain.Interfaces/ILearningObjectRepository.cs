@@ -7,13 +7,8 @@ using LObject.Domain.Core;
 
 namespace LObject.Domain.Interfaces
 {
-    public interface ILearningObjectRepository : IDisposable
+    public interface ILearningObjectRepository : IRepository<LearningObject>
     {
-        IEnumerable<LearningObject> GetLearningObjectList();
-        LearningObject GetLearningObject(int id);
-        void Create(LearningObject item);
-        void Update(LearningObject item);
-        void Delete(int id);
-        void Save();
+      
     }
 }
