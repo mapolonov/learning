@@ -21,7 +21,7 @@ namespace LObject3Tier.DAL.Repositories
 
         public IEnumerable<LearningObject> GetAll()
         {
-            return _dbContext.LearningObjects;
+            return _dbContext.LearningObjects.ToList();
         }
 
         public LearningObject Get(int id)

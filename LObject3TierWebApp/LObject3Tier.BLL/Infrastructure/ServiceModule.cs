@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using LObject3Tier.DAL.Interfaces;
+﻿using LObject3Tier.DAL.Interfaces;
 using LObject3Tier.DAL.Repositories;
 using Ninject.Modules;
 
-namespace LObject3Tier.BLL.Services
+namespace LObject3Tier.BLL.Infrastructure
 {
     public class ServiceModule : NinjectModule
     {

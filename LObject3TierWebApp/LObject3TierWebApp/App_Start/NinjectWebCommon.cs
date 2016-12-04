@@ -1,5 +1,7 @@
 using System.Web.Mvc;
+using LObject3Tier.BLL.Infrastructure;
 using LObjectWebApp.Util;
+using Ninject.Modules;
 
 [assembly: WebActivatorEx.PreApplicationStartMethod(typeof(LObjectWebApp.App_Start.NinjectWebCommon), "Start")]
 [assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(LObjectWebApp.App_Start.NinjectWebCommon), "Stop")]
@@ -42,7 +44,10 @@ namespace LObjectWebApp.App_Start
         /// <returns>The created kernel.</returns>
         private static IKernel CreateKernel()
         {
-            var kernel = new StandardKernel();
+
+            // устанавливаем строку подключения
+            var modules = new INinjectModule[] { new ServiceModule("DefaultConnection") };
+            var kernel = new StandardKernel(modules);
             try
             {
                 kernel.Bind<Func<IKernel>>().ToMethod(ctx => () => new Bootstrapper().Kernel);
@@ -56,6 +61,20 @@ namespace LObjectWebApp.App_Start
                 kernel.Dispose();
                 throw;
             }
+            //var kernel = new StandardKernel();
+            //try
+            //{
+            //    kernel.Bind<Func<IKernel>>().ToMethod(ctx => () => new Bootstrapper().Kernel);
+            //    kernel.Bind<IHttpModule>().To<HttpApplicationInitializationHttpModule>();
+
+            //    RegisterServices(kernel);
+            //    return kernel;
+            //}
+            //catch
+            //{
+            //    kernel.Dispose();
+            //    throw;
+            //}
         }
 
         /// <summary>

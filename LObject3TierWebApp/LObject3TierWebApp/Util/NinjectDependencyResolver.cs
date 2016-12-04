@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using LObject3Tier.BLL.Interfaces;
+using LObject3Tier.BLL.Services;
 //using LObject.Domain.Interfaces;
 //using LObject.Infrastructure.Data;
 using Ninject;
@@ -27,7 +29,7 @@ namespace LObjectWebApp.Util
         }
         private void AddBindings()
         {
-            //kernel.Bind<ILearningObjectRepository>().To<LearningObjectRepository>();
+            kernel.Bind<ICourseService>().To<CourseService>();
             //kernel.Bind<IOrder>().To<CacheOrder>();
         }
     }

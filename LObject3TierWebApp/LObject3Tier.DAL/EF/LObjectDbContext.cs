@@ -28,18 +28,18 @@ namespace LObject3Tier.DAL.EF
     {
         protected override void Seed(LObjectDbContext db)
         {
-            db.LearningObjects.Add(new LearningObject {Name = "Math Part 1", Company = "KPI"});
-            db.LearningObjects.Add(new LearningObject { Name = "Math Part 2", Company = "KPI" });
-            db.LearningObjects.Add(new LearningObject { Name = "Economics Basic", Company = "Lviv Politeh" });
-            db.LearningObjects.Add(new LearningObject { Name = "Computers Advance", Company = "Kharkiv Politeh" });
+            //db.LearningObjects.Add(new LearningObject {Name = "Math Part 1", Company = "KPI"});
+            //db.LearningObjects.Add(new LearningObject { Name = "Math Part 2", Company = "KPI" });
+            //db.LearningObjects.Add(new LearningObject { Name = "Economics Basic", Company = "Lviv Politeh" });
+            //db.LearningObjects.Add(new LearningObject { Name = "Computers Advance", Company = "Kharkiv Politeh" });
 
-            db.Students.Add(new Student {Name = "Mikki"});
-            db.Students.Add(new Student { Name = "Andy" });
-            db.Students.Add(new Student { Name = "Elena" });
-            db.Students.Add(new Student { Name = "Liliya" });
+            //db.Students.Add(new Student {Name = "Mikki"});
+            //db.Students.Add(new Student { Name = "Andy" });
+            //db.Students.Add(new Student { Name = "Elena" });
+            //db.Students.Add(new Student { Name = "Liliya" });
 
             
-            db.SaveChanges();
+            //db.SaveChanges();
         }
     }
 }

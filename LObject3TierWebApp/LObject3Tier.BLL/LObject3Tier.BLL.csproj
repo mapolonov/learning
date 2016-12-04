@@ -55,6 +55,7 @@
     <Compile Include="Interfaces\IStudentService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\CourseService.cs" />
+    <Compile Include="Infrastructure\ServiceModule.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LObject3Tier.DAL\LObject3Tier.DAL.csproj">
