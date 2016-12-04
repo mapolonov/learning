@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using LObject3Tier.DAL.Entities;
+using LObject3Tier.DAL.Identity;
 
 namespace LObject3Tier.DAL.Interfaces
 {
@@ -11,6 +12,8 @@ namespace LObject3Tier.DAL.Interfaces
     {
         IRepository<LearningObject> LearningObjects { get; }
         IRepository<Student> Students { get; }
+
         void Save();
+   
     }
 }

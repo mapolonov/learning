@@ -11,15 +11,17 @@ namespace LObject3Tier.DAL.EF
    public class LObjectDbContext : DbContext
     {
         public DbSet<LearningObject> LearningObjects { get; set; }
+
         public DbSet<Student> Students { get; set; }
+
+        public DbSet<ClientProfile> ClientProfiles { get; set; }
 
 
         static LObjectDbContext()
         {
-            Database.SetInitializer<LObjectDbContext>(new StoreDbInitializer());
+            Database.SetInitializer(new StoreDbInitializer());
         }
-        public LObjectDbContext(string connectionString)
-            : base(connectionString)
+        public LObjectDbContext(string connectionString) : base(connectionString)
         {
         }
     }
