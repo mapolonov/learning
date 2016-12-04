@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace LObjectWebApp
+namespace LObject3TierWebApp
 {
     public class FilterConfig
     {

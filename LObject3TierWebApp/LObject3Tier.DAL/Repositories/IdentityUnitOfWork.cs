@@ -13,7 +13,7 @@ namespace LObject3Tier.DAL.Repositories
 {
     public class IdentityUnitOfWork : IIdentityUnitOfWork
     {
-        private LObjectDbContext db;
+        private ApplicationDbContext db;
 
         private ApplicationUserManager userManager;
         private ApplicationRoleManager roleManager;
@@ -21,7 +21,7 @@ namespace LObject3Tier.DAL.Repositories
 
         public IdentityUnitOfWork(string connectionString)
         {
-            db = new LObjectDbContext(connectionString);
+            db = new ApplicationDbContext(connectionString);
             userManager = new ApplicationUserManager(new UserStore<ApplicationUser>(db));
             roleManager = new ApplicationRoleManager(new RoleStore<ApplicationRole>(db));
             clientManager = new ClientManager(db);

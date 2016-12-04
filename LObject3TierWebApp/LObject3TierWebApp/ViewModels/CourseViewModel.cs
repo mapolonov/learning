@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace LObjectWebApp.ViewModels
+﻿namespace LObject3TierWebApp.ViewModels
 {
     public class CourseViewModel
     {

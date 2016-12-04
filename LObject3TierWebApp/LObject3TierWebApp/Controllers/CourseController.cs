@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Collections.Generic;
 using System.Web.Mvc;
 using AutoMapper;
 using LObject3Tier.BLL.DTO;
 using LObject3Tier.BLL.Infrastructure;
 using LObject3Tier.BLL.Interfaces;
-using LObjectWebApp.ViewModels;
+using LObject3TierWebApp.ViewModels;
 
-namespace LObjectWebApp.Controllers
+namespace LObject3TierWebApp.Controllers
 {
     public class CourseController : Controller
     {

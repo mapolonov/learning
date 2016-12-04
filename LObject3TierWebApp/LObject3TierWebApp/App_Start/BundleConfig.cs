@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace LObjectWebApp
+namespace LObject3TierWebApp
 {
     public class BundleConfig
     {

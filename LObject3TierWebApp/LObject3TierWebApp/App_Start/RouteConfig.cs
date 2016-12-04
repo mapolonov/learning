@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace LObjectWebApp
+namespace LObject3TierWebApp
 {
     public class RouteConfig
     {

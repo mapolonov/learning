@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Web.Mvc;
+using LObject3TierWebApp.Controllers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using LObjectWebApp;
-using LObjectWebApp.Controllers;
 
 namespace LObjectWebApp.Tests.Controllers
 {

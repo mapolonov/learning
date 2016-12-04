@@ -1,70 +1,112 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
+using System.Security.Claims;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
-using System.Web.Script.Serialization;
-using System.Web.Security;
-using LObjectWebApp.ViewModels;
+using LObject3Tier.BLL.DTO;
+using LObject3Tier.BLL.Infrastructure;
+using LObject3Tier.BLL.Interfaces;
+using LObject3TierWebApp.ViewModels;
+using Microsoft.AspNet.Identity.Owin;
+using Microsoft.Owin.Security;
 
-namespace LObjectWebApp.Controllers
+namespace LObject3TierWebApp.Controllers
 {
     public class AccountController : Controller
     {
-        //// GET: Account
-        //[RequireHttps]
-        //[AllowAnonymous]
-        //public ActionResult Login()
-        //{
-        //    return View("Login");
-        //}
+        private IUserService UserService
+        {
+            get
+            {
+                return HttpContext.GetOwinContext().GetUserManager<IUserService>();
+            }
+        }
 
-        //[HttpPost]
-        //[RequireHttps]
-        //[ValidateAntiForgeryToken]
-        //[AllowAnonymous]
-        //public ActionResult Login(LoginViewModel avm, string returnUrl = "")
-        //{
-        //    //var am = new MyUserManager();
+        private IAuthenticationManager AuthenticationManager
+        {
+            get
+            {
+                return HttpContext.GetOwinContext().Authentication;
+            }
+        }
 
-        //    if (!ModelState.IsValid || !Membership.ValidateUser(avm.Username, avm.Password))
-        //    {
-        //        ViewBag.Error = "Account credentials are invalid";
-        //        return View("Login");
-        //    }
+        public ActionResult Login()
+        {
+            return View();
+        }
 
-        //    var user = am.Find(avm.Username, avm.Password);
-        //    var js = new JavaScriptSerializer();
-        //    var data = js.Serialize(user);
-        //    var ticket = new FormsAuthenticationTicket(1, avm.Username, DateTime.Now, DateTime.Now.AddMinutes(30), avm.RememberMe, data);
-        //    var encToken = FormsAuthentication.Encrypt(ticket);
-        //    var cockie = new HttpCookie(FormsAuthentication.FormsCookieName, encToken);
-        //    Response.Cookies.Add(cockie);
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> Login(LoginViewModel model)
+        {
+            await SetInitialDataAsync();
+            if (ModelState.IsValid)
+            {
+                UserDTO userDto = new UserDTO { Email = model.Email, Password = model.Password };
+                ClaimsIdentity claim = await UserService.Authenticate(userDto);
+                if (claim == null)
+                {
+                    ModelState.AddModelError("", "Неверный логин или пароль.");
+                }
+                else
+                {
+                    AuthenticationManager.SignOut();
+                    AuthenticationManager.SignIn(new AuthenticationProperties
+                    {
+                        IsPersistent = true
+                    }, claim);
+                    return RedirectToAction("Index", "Home");
+                }
+            }
+            return View(model);
+        }
 
+        public ActionResult Logout()
+        {
+            AuthenticationManager.SignOut();
+            return RedirectToAction("Index", "Home");
+        }
 
-        //    //FormsAuthentication.SetAuthCookie(avm.Username, avm.RememberMe);
-        //    if (Url.IsLocalUrl(returnUrl))
-        //    {
-        //        return Redirect(returnUrl);
-        //    }
-        //    else
-        //    {
-        //        return RedirectToAction("Index", "Profile");
+        public ActionResult Register()
+        {
+            return View();
+        }
 
-        //    }
-
-
-
-        //}
-
-        //[Authorize]
-        //[HttpPost]
-        //[RequireHttps]
-        //public ActionResult Logout()
-        //{
-        //    FormsAuthentication.SignOut();
-        //    return RedirectToAction("Login", "Account");
-        //}
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> Register(RegisterViewModel model)
+        {
+            await SetInitialDataAsync();
+            if (ModelState.IsValid)
+            {
+                UserDTO userDto = new UserDTO
+                {
+                    Email = model.Email,
+                    Password = model.Password,
+                    Address = model.Address,
+                    Name = model.Name,
+                    Role = "user"
+                };
+                OperationDetails operationDetails = await UserService.Create(userDto);
+                if (operationDetails.Succedeed)
+                    return View("SuccessRegister");
+                else
+                    ModelState.AddModelError(operationDetails.Property, operationDetails.Message);
+            }
+            return View(model);
+        }
+        private async Task SetInitialDataAsync()
+        {
+            await UserService.SetInitialData(new UserDTO
+            {
+                Email = "somemail@mail.ru",
+                UserName = "somemail@mail.ru",
+                Password = "ad46D_ewr3",
+                Name = "Семен Семенович Горбунков",
+                Address = "ул. Спортивная, д.30, кв.75",
+                Role = "admin",
+            }, new List<string> { "user", "admin" });
+        }
 
 
     }

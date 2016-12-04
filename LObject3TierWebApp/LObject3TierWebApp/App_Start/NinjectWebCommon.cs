@@ -1,12 +1,12 @@
 using System.Web.Mvc;
 using LObject3Tier.BLL.Infrastructure;
-using LObjectWebApp.Util;
+using LObject3TierWebApp.Util;
 using Ninject.Modules;
 
-[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(LObjectWebApp.App_Start.NinjectWebCommon), "Start")]
-[assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(LObjectWebApp.App_Start.NinjectWebCommon), "Stop")]
+[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(LObject3TierWebApp.App_Start.NinjectWebCommon), "Start")]
+[assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(LObject3TierWebApp.App_Start.NinjectWebCommon), "Stop")]
 
-namespace LObjectWebApp.App_Start
+namespace LObject3TierWebApp.App_Start
 {
     using System;
     using System.Web;
@@ -61,20 +61,7 @@ namespace LObjectWebApp.App_Start
                 kernel.Dispose();
                 throw;
             }
-            //var kernel = new StandardKernel();
-            //try
-            //{
-            //    kernel.Bind<Func<IKernel>>().ToMethod(ctx => () => new Bootstrapper().Kernel);
-            //    kernel.Bind<IHttpModule>().To<HttpApplicationInitializationHttpModule>();
-
-            //    RegisterServices(kernel);
-            //    return kernel;
-            //}
-            //catch
-            //{
-            //    kernel.Dispose();
-            //    throw;
-            //}
+           
         }
 
         /// <summary>

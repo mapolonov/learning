@@ -1,22 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace LObjectWebApp.ViewModels
+namespace LObject3TierWebApp.ViewModels
 {
     public class LoginViewModel
     {
-        [Required(ErrorMessage = "Please enter user name")]
-        [Display(Name = "User Name", Description = "Enter user name")]
-        public string Username { get; set; }
-
-        [Required(ErrorMessage = "Please enter password")]
-        [Display(Name = "Password", Description = "Enter password")]
+        [Required]
+        public string Email { get; set; }
+        [Required]
+        [DataType(DataType.Password)]
         public string Password { get; set; }
-
-        [Display(Name = "Remember me?", Description = "Remember me?")]
-        public bool RememberMe { get; set; }
     }
 }

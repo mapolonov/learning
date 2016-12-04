@@ -11,9 +11,9 @@ namespace LObject3Tier.DAL.Repositories
 {
     public class ClientManager : IClientManager
     {
-        public LObjectDbContext Database { get; set; }
+        public ApplicationDbContext Database { get; set; }
 
-        public ClientManager(LObjectDbContext db)
+        public ClientManager(ApplicationDbContext db)
         {
             Database = db;
         }
