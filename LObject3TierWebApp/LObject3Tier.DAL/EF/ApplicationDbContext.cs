@@ -14,5 +14,12 @@ namespace LObject3Tier.DAL.EF
         public ApplicationDbContext(string conectionString) : base(conectionString) { }
 
         public DbSet<ClientProfile> ClientProfiles { get; set; }
+
+        static ApplicationDbContext()
+        {
+            //Использовать если хотим запретить CodeFirst 
+            //и проверку измененной модели и хеш кода в таблице __MigrationHistory
+            Database.SetInitializer<ApplicationDbContext>(null);
+        }
     }
 }

@@ -39,7 +39,7 @@ namespace LObject3TierWebApp.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Login(LoginViewModel model)
         {
-            await SetInitialDataAsync();
+            //await SetInitialDataAsync();
             if (ModelState.IsValid)
             {
                 UserDTO userDto = new UserDTO { Email = model.Email, Password = model.Password };
@@ -53,7 +53,7 @@ namespace LObject3TierWebApp.Controllers
                     AuthenticationManager.SignOut();
                     AuthenticationManager.SignIn(new AuthenticationProperties
                     {
-                        IsPersistent = true
+                        IsPersistent = model.RememberMe
                     }, claim);
                     return RedirectToAction("Index", "Home");
                 }
@@ -76,7 +76,7 @@ namespace LObject3TierWebApp.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Register(RegisterViewModel model)
         {
-            await SetInitialDataAsync();
+            //await SetInitialDataAsync();
             if (ModelState.IsValid)
             {
                 UserDTO userDto = new UserDTO
@@ -85,6 +85,8 @@ namespace LObject3TierWebApp.Controllers
                     Password = model.Password,
                     Address = model.Address,
                     Name = model.Name,
+                    FisrtName = model.FirstName,
+                    LastName = model.LastName,
                     Role = "user"
                 };
                 OperationDetails operationDetails = await UserService.Create(userDto);

@@ -22,5 +22,11 @@ namespace LObject3TierWebApp.ViewModels
         public string Address { get; set; }
         [Required]
         public string Name { get; set; }
+
+        [Required]
+        public string FirstName { get; set; }
+
+        [Required]
+        public string LastName { get; set; }
     }
 }

@@ -30,3 +30,6 @@
 /LObject3TierWebApp/LObject3TierWebApp/obj/Debug
 /LObjectWebApp/NDependOut
 /LObjectWebApp/*.ndproj
+/LObject3TierWebApp/*.user
+/LObject3TierWebApp/NDependOut
+/LObject3TierWebApp/*.ndproj
