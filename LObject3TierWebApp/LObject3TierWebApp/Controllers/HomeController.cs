@@ -11,14 +11,14 @@ namespace LObject3TierWebApp.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "LObject System Description.";
 
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "LObject Contacts.";
 
             return View();
         }

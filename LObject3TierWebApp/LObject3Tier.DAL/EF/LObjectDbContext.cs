@@ -14,8 +14,7 @@ namespace LObject3Tier.DAL.EF
 
         public DbSet<Student> Students { get; set; }
 
-        public DbSet<ClientProfile> ClientProfiles { get; set; }
-
+        
 
         static LObjectDbContext()
         {

@@ -5,9 +5,9 @@ using System.Text;
 using System.Web.Mvc;
 using LObject3TierWebApp.Controllers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using LObjectWebApp;
+using LObject3TierWebApp;
 
-namespace LObjectWebApp.Tests.Controllers
+namespace LObject3TierWebApp.Tests.Controllers
 {
     [TestClass]
     public class HomeControllerTest
