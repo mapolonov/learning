@@ -1,0 +1,8 @@
+﻿@using Microsoft.AspNet.Identity
+@if (Request.IsAuthenticated && User.IsInRole("user"))
+{
+    <ul class="nav navbar-nav navbar-right">
+        <li>@Html.ActionLink("My Room", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+    </ul>
+}
+

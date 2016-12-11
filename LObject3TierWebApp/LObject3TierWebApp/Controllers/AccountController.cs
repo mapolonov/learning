@@ -79,7 +79,7 @@ namespace LObject3TierWebApp.Controllers
             //await SetInitialDataAsync();
             if (ModelState.IsValid)
             {
-                UserDTO userDto = new UserDTO
+                var userDto = new UserDTO
                 {
                     Email = model.Email,
                     Password = model.Password,
