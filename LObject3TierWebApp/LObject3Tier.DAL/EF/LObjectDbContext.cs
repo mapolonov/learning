@@ -8,21 +8,26 @@ using LObject3Tier.DAL.Entities;
 
 namespace LObject3Tier.DAL.EF
 {
-   public class LObjectDbContext : DbContext
+    public class LObjectDbContext : DbContext
     {
         public DbSet<LearningObject> LearningObjects { get; set; }
 
-        public DbSet<Student> Students { get; set; }
+        public DbSet<Enrollment> Enrollments { get; set; }
 
-        
+        public DbSet<Course> Courses { get; set; }
+
+
 
         static LObjectDbContext()
         {
             Database.SetInitializer(new StoreDbInitializer());
         }
+
         public LObjectDbContext(string connectionString) : base(connectionString)
         {
         }
+
+       
     }
 
     public class StoreDbInitializer : DropCreateDatabaseIfModelChanges<LObjectDbContext>
@@ -39,7 +44,7 @@ namespace LObject3Tier.DAL.EF
             //db.Students.Add(new Student { Name = "Elena" });
             //db.Students.Add(new Student { Name = "Liliya" });
 
-            
+
             //db.SaveChanges();
         }
     }

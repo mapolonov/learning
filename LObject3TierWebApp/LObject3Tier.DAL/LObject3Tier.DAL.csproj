@@ -62,8 +62,9 @@
     <Compile Include="Entities\ApplicationRole.cs" />
     <Compile Include="Entities\ApplicationUser.cs" />
     <Compile Include="Entities\ClientProfile.cs" />
+    <Compile Include="Entities\Course.cs" />
     <Compile Include="Entities\LearningObject.cs" />
-    <Compile Include="Entities\Student.cs" />
+    <Compile Include="Entities\Enrollment.cs" />
     <Compile Include="Identity\ApplicationRoleManager.cs" />
     <Compile Include="Identity\ApplicationUserManager.cs" />
     <Compile Include="Interfaces\IClientManager.cs" />

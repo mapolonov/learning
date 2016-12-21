@@ -13,7 +13,7 @@ namespace LObject3Tier.DAL.Repositories
     {
         private LObjectDbContext _dbContext;
         private LearningObjectRepository _loRepository;
-        private StudentRepository _studentRepository;
+        //private StudentRepository _studentRepository;
         private bool _disposed = false;
 
             
@@ -27,10 +27,10 @@ namespace LObject3Tier.DAL.Repositories
             get { return _loRepository ?? (_loRepository = new LearningObjectRepository(_dbContext)); }
         }
 
-        public IRepository<Student> Students
-        {
-            get { return _studentRepository ?? (_studentRepository = new StudentRepository(_dbContext)); }
-        }
+        //public IRepository<Student> Students
+        //{
+        //    get { return _studentRepository ?? (_studentRepository = new StudentRepository(_dbContext)); }
+        //}
 
        
         public void Save()

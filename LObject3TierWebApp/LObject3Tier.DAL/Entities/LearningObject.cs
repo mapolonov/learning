@@ -10,16 +10,16 @@ namespace LObject3Tier.DAL.Entities
     {
         public LearningObject()
         {
-            this.Students = new HashSet<Student>();
+            //this.Students = new HashSet<Student>();
         }
 
-        public int Id { get; set; }
+        public virtual int Id { get; set; }
 
-        public string Name { get; set; }
+        public virtual string Name { get; set; }
 
-        public string Company { get; set; }
+        public virtual string Company { get; set; }
 
-        public virtual ICollection<Student> Students { get; set; }
+        //public virtual ICollection<Student> Students { get; set; }
 
     }
 }

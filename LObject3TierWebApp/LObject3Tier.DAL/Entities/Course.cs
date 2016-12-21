@@ -3,13 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace LObject3Tier.DAL.Entities
 {
-    public class ApplicationUser : IdentityUser
+    public class Course
     {
-        public virtual ClientProfile ClientProfile { get; set; }
+        public Course()
+        {
+            
+        }
+
+        public virtual int CourseId { get; set; }
+        public virtual string CourseName { get; set; }
 
         public virtual ICollection<Enrollment> Enrollments { get; set; }
     }
