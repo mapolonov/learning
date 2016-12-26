@@ -12,9 +12,9 @@ namespace LObject3Tier.DAL.Repositories
 {
     public class LearningObjectRepository : IRepository<LearningObject>
     {
-        private LObjectDbContext _dbContext;
+        private ApplicationDbContext _dbContext;
 
-        public LearningObjectRepository(LObjectDbContext context)
+        public LearningObjectRepository(ApplicationDbContext context)
         {
             this._dbContext = context;
         }

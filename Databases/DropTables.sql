@@ -1,0 +1,14 @@
+drop table Enrollments
+drop table LearningObjects
+drop table Courses
+drop table ClientProfiles
+drop table CourseCategories
+drop table SaleGroups
+drop table Filials
+drop table SaleGroups
+drop table AspNetUserRoles
+drop table AspNetUserLogins
+drop table AspNetUserClaims
+drop table AspNetUsers
+drop table AspNetRoles
+drop table __MigrationHistory

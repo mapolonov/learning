@@ -7,22 +7,17 @@ using System.Threading.Tasks;
 
 namespace LObject3Tier.DAL.Entities
 {
-    public class LearningObject
+    public class Filial
     {
-        public LearningObject()
+        public Filial()
         {
-            //this.Students = new HashSet<Student>();
+            
         }
 
         public virtual int Id { get; set; }
 
-        [MaxLength(100)]
+        [MaxLength(250)]
         public virtual string Name { get; set; }
-
-        [MaxLength(100)]
-        public virtual string Company { get; set; }
-
-        //public virtual ICollection<Student> Students { get; set; }
-
+        
     }
 }

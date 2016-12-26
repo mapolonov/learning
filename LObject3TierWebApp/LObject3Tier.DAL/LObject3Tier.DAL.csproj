@@ -49,6 +49,8 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -59,9 +61,14 @@
   <ItemGroup>
     <Compile Include="EF\ApplicationDbContext.cs" />
     <Compile Include="EF\LObjectDbContext.cs" />
+    <Compile Include="EF\StoreDbInitializer.cs" />
     <Compile Include="Entities\ApplicationRole.cs" />
     <Compile Include="Entities\ApplicationUser.cs" />
     <Compile Include="Entities\ClientProfile.cs" />
+    <Compile Include="Entities\JobPosition.cs" />
+    <Compile Include="Entities\Filial.cs" />
+    <Compile Include="Entities\SaleGroup.cs" />
+    <Compile Include="Entities\CourseCategory.cs" />
     <Compile Include="Entities\Course.cs" />
     <Compile Include="Entities\LearningObject.cs" />
     <Compile Include="Entities\Enrollment.cs" />
@@ -71,6 +78,7 @@
     <Compile Include="Interfaces\IIdentityUnitOfWork.cs" />
     <Compile Include="Interfaces\IUnitOfWork.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\ClientManager.cs" />
     <Compile Include="Repositories\EFUnitOfWork.cs" />
@@ -82,7 +90,9 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

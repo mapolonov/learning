@@ -76,7 +76,7 @@ namespace LObject3TierWebApp.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Register(RegisterViewModel model)
         {
-            //await SetInitialDataAsync();
+            await SetInitialDataAsync();
             if (ModelState.IsValid)
             {
                 var userDto = new UserDTO

@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace LObject3Tier.DAL.Entities
 {
-    public class LearningObject
+    public class CourseCategory
     {
-        public LearningObject()
+        public CourseCategory()
         {
-            //this.Students = new HashSet<Student>();
+            
         }
 
         public virtual int Id { get; set; }
@@ -19,10 +19,8 @@ namespace LObject3Tier.DAL.Entities
         [MaxLength(100)]
         public virtual string Name { get; set; }
 
-        [MaxLength(100)]
-        public virtual string Company { get; set; }
-
-        //public virtual ICollection<Student> Students { get; set; }
+        [MaxLength(250)]
+        public virtual string Description { get; set; }
 
     }
 }

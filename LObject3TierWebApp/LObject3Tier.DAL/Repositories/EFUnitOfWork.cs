@@ -11,7 +11,7 @@ namespace LObject3Tier.DAL.Repositories
 {
     public class EFUnitOfWork : IUnitOfWork
     {
-        private LObjectDbContext _dbContext;
+        private ApplicationDbContext _dbContext;
         private LearningObjectRepository _loRepository;
         //private StudentRepository _studentRepository;
         private bool _disposed = false;
@@ -19,7 +19,7 @@ namespace LObject3Tier.DAL.Repositories
             
         public EFUnitOfWork(string connectionString)
         {
-            _dbContext = new LObjectDbContext(connectionString);
+            _dbContext = new ApplicationDbContext(connectionString);
         }
 
         public IRepository<LearningObject> LearningObjects

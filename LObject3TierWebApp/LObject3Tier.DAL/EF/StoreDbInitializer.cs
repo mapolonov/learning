@@ -1,0 +1,29 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data.Entity;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using LObject3Tier.DAL.Entities;
+
+namespace LObject3Tier.DAL.EF
+{
+    public class StoreDbInitializer : DropCreateDatabaseIfModelChanges<ApplicationDbContext>
+    {
+        protected override void Seed(ApplicationDbContext db)
+        {
+            db.LearningObjects.Add(new LearningObject { Name = "Math Part 1", Company = "KPI" });
+            db.LearningObjects.Add(new LearningObject { Name = "Math Part 2", Company = "KPI" });
+            db.LearningObjects.Add(new LearningObject { Name = "Economics Basic", Company = "Lviv Politeh" });
+            db.LearningObjects.Add(new LearningObject { Name = "Computers Advance", Company = "Kharkiv Politeh" });
+
+            //db.Students.Add(new Student {Name = "Mikki"});
+            //db.Students.Add(new Student { Name = "Andy" });
+            //db.Students.Add(new Student { Name = "Elena" });
+            //db.Students.Add(new Student { Name = "Liliya" });
+
+
+            //db.SaveChanges();
+        }
+    }
+}
