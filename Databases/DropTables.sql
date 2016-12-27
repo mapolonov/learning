@@ -3,9 +3,12 @@ drop table LearningObjects
 drop table Courses
 drop table ClientProfiles
 drop table CourseCategories
-drop table SaleGroups
+drop table JobPositions
 drop table Filials
 drop table SaleGroups
+drop table AssessmentQuestions
+drop table Assessments
+drop table Questions
 drop table AspNetUserRoles
 drop table AspNetUserLogins
 drop table AspNetUserClaims

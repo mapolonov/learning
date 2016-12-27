@@ -60,13 +60,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EF\ApplicationDbContext.cs" />
-    <Compile Include="EF\LObjectDbContext.cs" />
     <Compile Include="EF\StoreDbInitializer.cs" />
     <Compile Include="Entities\ApplicationRole.cs" />
     <Compile Include="Entities\ApplicationUser.cs" />
     <Compile Include="Entities\ClientProfile.cs" />
+    <Compile Include="Entities\AssessmentQuestion.cs" />
     <Compile Include="Entities\JobPosition.cs" />
     <Compile Include="Entities\Filial.cs" />
+    <Compile Include="Entities\Assessment.cs" />
+    <Compile Include="Entities\Question.cs" />
     <Compile Include="Entities\SaleGroup.cs" />
     <Compile Include="Entities\CourseCategory.cs" />
     <Compile Include="Entities\Course.cs" />

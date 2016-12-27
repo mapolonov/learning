@@ -29,6 +29,8 @@ namespace LObject3Tier.DAL.EF
 
         public DbSet<JobPosition> JobPositions { get; set; }
 
+        public DbSet<Assessment> Assessments { get; set; }
+
         public ApplicationDbContext()
         {
             
@@ -62,6 +64,23 @@ namespace LObject3Tier.DAL.EF
                 .HasMany(course => course.Enrollments)
                 .WithRequired(enrollment => enrollment.Course)
                 .HasForeignKey(enrollment => enrollment.CourseId);
+
+
+            modelBuilder.Entity<Assessment>()
+               .HasKey(assessment => assessment.Id);
+            modelBuilder.Entity<Question>()
+                .HasKey(question => question.Id);
+            modelBuilder.Entity<AssessmentQuestion>()
+                .HasKey(aq => new { aq.AssessmentId, aq.QuestionId });
+
+            modelBuilder.Entity<Assessment>()
+                .HasMany(assessment => assessment.AssessmentQuestions)
+                .WithRequired(aq => aq.Assessment)
+                .HasForeignKey(aq => aq.AssessmentId);
+            modelBuilder.Entity<Question>()
+                .HasMany(question => question.AssessmentQuestions)
+                .WithRequired(aq => aq.Question)
+                .HasForeignKey(aq => aq.QuestionId);
         }
 
         

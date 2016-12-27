@@ -57,7 +57,7 @@ namespace LObject3Tier.BLL.Services
             if (string.IsNullOrEmpty(lo.Company))
                 throw new ValidationException("Course Company cannot be empty", "");
 
-            _unitOfWork.LearningObjects.Create(new LearningObject {Name = lo.Name, Company = lo.Company});
+            _unitOfWork.LearningObjects.Create(new LearningObject {Name = lo.Name, Description = lo.Company});
             _unitOfWork.Save();
         }
 
@@ -73,7 +73,7 @@ namespace LObject3Tier.BLL.Services
                 throw new ValidationException("Course Company cannot be empty", "");
             var objToUpdate = _unitOfWork.LearningObjects.Get(lo.Id);
             objToUpdate.Name = lo.Name;
-            objToUpdate.Company = lo.Company;
+            objToUpdate.Description = lo.Company;
             _unitOfWork.LearningObjects.Update(objToUpdate);
             _unitOfWork.Save();
         }
