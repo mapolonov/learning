@@ -65,6 +65,8 @@
     <Compile Include="Entities\ApplicationUser.cs" />
     <Compile Include="Entities\ClientProfile.cs" />
     <Compile Include="Entities\AssessmentQuestion.cs" />
+    <Compile Include="Entities\ProgressState.cs" />
+    <Compile Include="Entities\Progress.cs" />
     <Compile Include="Entities\JobPosition.cs" />
     <Compile Include="Entities\Filial.cs" />
     <Compile Include="Entities\Assessment.cs" />

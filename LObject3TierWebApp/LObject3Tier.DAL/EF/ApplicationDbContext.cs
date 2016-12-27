@@ -31,6 +31,11 @@ namespace LObject3Tier.DAL.EF
 
         public DbSet<Assessment> Assessments { get; set; }
 
+        public DbSet<ProgressState> ProgressStates { get; set; }
+
+        public DbSet<Progress> Progress { get; set; }
+
+
         public ApplicationDbContext()
         {
             

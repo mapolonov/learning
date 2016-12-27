@@ -15,9 +15,6 @@ namespace LObject3Tier.DAL.Entities
             
         }
 
-        //[Key]
-        //public int EnrollmentId { get; set; }
-
         [ForeignKey("Course")]
         public virtual int CourseId { get; set; }
 

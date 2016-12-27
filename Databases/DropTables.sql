@@ -9,6 +9,8 @@ drop table SaleGroups
 drop table AssessmentQuestions
 drop table Assessments
 drop table Questions
+drop table Progresses
+drop table ProgressStates
 drop table AspNetUserRoles
 drop table AspNetUserLogins
 drop table AspNetUserClaims

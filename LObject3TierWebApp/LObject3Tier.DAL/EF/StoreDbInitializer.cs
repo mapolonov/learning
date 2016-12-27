@@ -12,6 +12,10 @@ namespace LObject3Tier.DAL.EF
     {
         protected override void Seed(ApplicationDbContext db)
         {
+            var progr1 = new ProgressState { Name = "Not Started" };
+            var progr2 = new ProgressState { Name = "Started" };
+            var progr3 = new ProgressState { Name = "Complete" };
+
             var filial1 = new Filial { Name = "Kiev 01 region" };
             var filial2 = new Filial { Name = "Kiev 02 region" };
             var filial3 = new Filial { Name = "Dnipro 01 region" };
@@ -37,6 +41,8 @@ namespace LObject3Tier.DAL.EF
             var lo5 = new LearningObject { Course = course2, Name = "Карта потребительского рынка", Description = "eco", Order = 1 };
             var lo6 = new LearningObject { Course = course2, Name = "Стратегия продаж", Description = "eco", Order = 2 };
 
+
+            
 
             db.Filials.Add(filial1);
             db.Filials.Add(filial2);
