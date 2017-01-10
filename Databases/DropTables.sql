@@ -1,3 +1,4 @@
+drop table Progresses
 drop table Enrollments
 drop table LearningObjects
 drop table Courses
@@ -8,8 +9,8 @@ drop table Filials
 drop table SaleGroups
 drop table AssessmentQuestions
 drop table Assessments
+drop table Answers
 drop table Questions
-drop table Progresses
 drop table ProgressStates
 drop table AspNetUserRoles
 drop table AspNetUserLogins

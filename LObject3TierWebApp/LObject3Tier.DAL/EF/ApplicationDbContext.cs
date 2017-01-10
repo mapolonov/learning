@@ -35,6 +35,10 @@ namespace LObject3Tier.DAL.EF
 
         public DbSet<Progress> Progress { get; set; }
 
+        public DbSet<Question> Questions { get; set; }
+
+        public DbSet<Answer> Answers { get; set; }
+
 
         public ApplicationDbContext()
         {

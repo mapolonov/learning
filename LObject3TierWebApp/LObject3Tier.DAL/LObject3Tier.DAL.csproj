@@ -70,6 +70,7 @@
     <Compile Include="Entities\JobPosition.cs" />
     <Compile Include="Entities\Filial.cs" />
     <Compile Include="Entities\Assessment.cs" />
+    <Compile Include="Entities\Answer.cs" />
     <Compile Include="Entities\Question.cs" />
     <Compile Include="Entities\SaleGroup.cs" />
     <Compile Include="Entities\CourseCategory.cs" />
