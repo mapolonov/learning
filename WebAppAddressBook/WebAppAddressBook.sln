@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAppAddressBook", "WebAppAddressBook\WebAppAddressBook.csproj", "{0AE23745-C84D-4D38-A4E0-62026B51CF58}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAppAddressBook.Tests", "WebAppAddressBook.Tests\WebAppAddressBook.Tests.csproj", "{BB303C30-0F3B-44B7-AAF8-9C3D148815A9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0AE23745-C84D-4D38-A4E0-62026B51CF58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AE23745-C84D-4D38-A4E0-62026B51CF58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AE23745-C84D-4D38-A4E0-62026B51CF58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AE23745-C84D-4D38-A4E0-62026B51CF58}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB303C30-0F3B-44B7-AAF8-9C3D148815A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB303C30-0F3B-44B7-AAF8-9C3D148815A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB303C30-0F3B-44B7-AAF8-9C3D148815A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB303C30-0F3B-44B7-AAF8-9C3D148815A9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

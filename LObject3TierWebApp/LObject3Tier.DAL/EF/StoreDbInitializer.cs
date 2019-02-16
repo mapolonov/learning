@@ -41,8 +41,8 @@ namespace LObject3Tier.DAL.EF
             var lo5 = new LearningObject { Course = course2, Name = "Карта потребительского рынка", Description = "eco", Order = 1 };
             var lo6 = new LearningObject { Course = course2, Name = "Стратегия продаж", Description = "eco", Order = 2 };
 
-
-            
+            var q1 = new Question {QuestionTypeId = 1, Content = "Who am I?"};
+            db.Questions.Add(q1);
 
             db.Filials.Add(filial1);
             db.Filials.Add(filial2);
