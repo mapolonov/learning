@@ -88,7 +88,7 @@ namespace EventUsage
 
         static void Main(string[] args)
         {
-            //var a = new A();
+            //var a = new A(); 
             //a.DoWork += m1;
             //a.DoWork += m2;
             //a.DoWork += m3;
